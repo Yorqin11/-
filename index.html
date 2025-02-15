@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤣 ЭПИК ГЕНЕРАТОР УГАРА 🤣</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            background: linear-gradient(135deg, #ff00ff, #ff8800, #00ff88);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.2s;
+        }
+
+        .container {
+            max-width: 750px;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: pop-in 0.5s ease-out;
+        }
+
+        @keyframes pop-in {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            color: #ff0000;
+            font-size: 22px;
+            text-shadow: 3px 3px yellow;
+        }
+
+        #story {
+            font-size: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #ffeb3b;
+            border-radius: 10px;
+            min-height: 100px;
+            color: #000;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: #ff0000;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+            text-shadow: 2px 2px black;
+        }
+
+        button:hover {
+            background: #cc0000;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
+        .emoji {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🤣 ЭПИК ГЕНЕРАТОР УГАРА 🤣</h1>
+        <div id="story">Нажми на кнопку, чтобы попасть в мир хаоса! 🔥</div>
+        <br><br>
+        <button onclick="generateStory()">🔥 ЭПИК УГАР! 🔥</button>
+    </div>
+
+    <script>
+        function generateStory() {
+            const characters = ["Бомж-маг", "Дед на велосипеде", "Говорящий таракан", "Суслик-псих", "Кот-каратист", "Пельмень-мутант"];
+            const actions = ["украл носки у соседа", "взорвал чайник", "спрятался в микроволновке", "устроил рэп-баттл с голубем", "случайно стал президентом", "открыл портал в мир картошки"];
+            const places = ["в магазине", "на крыше школы", "в пещере с троллями", "на Луне", "в туалете Макдональдса", "в вагоне метро"];
+            const emojis = ["😂", "🤣", "😱", "🤯", "👀", "🔥", "💀", "🦄", "🚀"];
+
+            const character = characters[Math.floor(Math.random() * characters.length)];
+            const action = actions[Math.floor(Math.random() * actions.length)];
+            const place = places[Math.floor(Math.random() * places.length)];
+            const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+            const storyText = `Однажды ${character} ${action} ${place}! ${emoji}`;
+
+            const storyElement = document.getElementById("story");
+            storyElement.innerText = storyText;
+            storyElement.style.transform = "scale(1.2)";
+            setTimeout(() => {
+                storyElement.style.transform = "scale(1)";
+            }, 200);
+
+            // Эффект тряски экрана
+            document.body.style.transform = "rotate(2deg)";
+            setTimeout(() => {
+                document.body.style.transform = "rotate(-2deg)";
+            }, 100);
+            setTimeout(() => {
+                document.body.style.transform = "rotate(0)";
+            }, 200);
+
+            // Меняем фон на случайный
+            document.body.style.background = `linear-gradient(135deg, rgb(${randColor()}, ${randColor()}, ${randColor()}), rgb(${randColor()}, ${randColor()}, ${randColor()}))`;
+        }
+
+        function randColor() {
+            return Math.floor(Math.random() * 256);
+        }
+    </script>
+
+</body>
+</html>
